@@ -1,9 +1,14 @@
-import express from 'express'
+import express from 'express' // ESmodules
+// TODO: const express = require('express') // CommonJS
 
-const Router = express.Router()
+const router = express.Router()
 
-Router.get('/ping', (_req, res) => {
-  res.send('ponggg').status(200)
+router.get('/', (_req, res) => {
+  res.send('Fetching all entry diaries').status(200)
 })
 
-export default Router
+router.post('/', (_req, res) => {
+  res.send('Creating a new entry diary').status(200)
+})
+
+export default router
